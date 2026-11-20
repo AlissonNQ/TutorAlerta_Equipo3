@@ -14,7 +14,7 @@ Aplicación de escritorio en Java para la alerta temprana de riesgo académico, 
 ## Estructura del Proyecto
 * `src/tutoralerta/principal/` – Punto de entrada de la aplicación.
 * `src/tutoralerta/modelo/` – Entidades del dominio (`Estudiante`, `Sesion`, `Evaluacion`, `Nota`).
-* `src/tutoralerta/datos/` – Persistencia y lectura/escritura en archivos CSV.
+* `src/tutoralerta/persistencia/` – Persistencia y lectura/escritura en archivos CSV.
 * `src/tutoralerta/servicio/` – Lógica de negocio y validaciones.
 * `src/tutoralerta/vista/` – Interfaz gráfica de usuario (Java Swing/JavaFX).
 * `dist/` – Archivo ejecutable `TutorAlerta.jar` y carpeta `datos/` con archivos CSV.
