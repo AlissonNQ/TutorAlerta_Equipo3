@@ -9,7 +9,7 @@ Aplicación de escritorio en Java para la alerta temprana de riesgo académico, 
 * **Alisson** – Arquitectura, Persistencia (CSV) & QA Lead
 
 ## Tablero de Seguimiento (Scrum)
-* **Trello:** `<PEGAR_LINK_DE_TRELLO_AQUI>`
+* **Trello:** (https://trello.com/invite/b/6affbb680328e514d0a9099e/ATTI3e8dde98c423dac40c7a50901cbd9c32E65DD0E5/tutoralerta-equipo-3)
 
 ## Estructura del Proyecto
 * `src/tutoralerta/principal/` – Punto de entrada de la aplicación.
