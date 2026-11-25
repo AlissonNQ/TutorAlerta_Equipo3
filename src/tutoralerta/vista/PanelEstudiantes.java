@@ -61,23 +61,35 @@ public class PanelEstudiantes extends JPanel {
     // =========================================================================
 
     private void inicializarComponentes() {
+        Color fondoCrema = new Color(250, 248, 245);
+        Color azulMarino = new Color(15,23, 42, 255);
+        //Color mentaPastel = new Color(196, 232, 214);
+        Color lavandaPastel = new Color(220, 216, 242);
+        Color textoOscuro = new Color(45, 52, 64);
+
         setLayout(new BorderLayout(10, 10));
         setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        setBackground(fondoCrema);
 
         // --- Panel superior: título + formulario + botones ---
         JPanel panelSuperior = new JPanel();
         panelSuperior.setLayout(new BoxLayout(panelSuperior, BoxLayout.Y_AXIS));
+        panelSuperior.setBackground(fondoCrema);
 
         // Título
         JPanel panelTitulo = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelTitulo.setBackground(fondoCrema);
         JLabel lblTitulo = new JLabel("Registro de Estudiantes");
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 20));
+        lblTitulo.setForeground(textoOscuro);
         panelTitulo.add(lblTitulo);
         panelSuperior.add(panelTitulo);
+        
 
         // Formulario de datos
         JPanel panelFormulario = new JPanel(new GridLayout(4, 2, 8, 8));
         panelFormulario.setBorder(BorderFactory.createTitledBorder("Datos del Estudiante"));
+        panelFormulario.setBackground(fondoCrema);
 
         txtCedula    = new JTextField(20);
         txtNombres   = new JTextField(20);
@@ -97,10 +109,20 @@ public class PanelEstudiantes extends JPanel {
 
         // Botones de acción
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 12, 8));
+        panelBotones.setBackground(fondoCrema);
 
         btnRegistrar = new JButton("Registrar");
         btnEditar    = new JButton("Guardar Cambios");
         btnLimpiar   = new JButton("Limpiar");
+
+        //colores
+        btnRegistrar.setBackground(azulMarino);
+        btnRegistrar.setForeground(Color.WHITE);
+        btnEditar.setBackground(azulMarino);
+        btnEditar.setForeground(Color.WHITE);
+        btnLimpiar.setBackground(lavandaPastel);
+        btnLimpiar.setForeground(Color.BLACK);
+        //
 
         btnEditar.setEnabled(false);
 
@@ -126,6 +148,13 @@ public class PanelEstudiantes extends JPanel {
         tabla.getTableHeader().setReorderingAllowed(false);
         tabla.setRowHeight(22);
 
+        //colores
+        Color rojoOscuro = new Color(139, 24, 36);
+        tabla.setSelectionBackground(lavandaPastel);
+        tabla.setSelectionForeground(textoOscuro);
+        tabla.getTableHeader().setBackground(rojoOscuro);
+        tabla.getTableHeader().setForeground(Color.WHITE);
+
         // Ajustar ancho de columnas
         tabla.getColumnModel().getColumn(0).setPreferredWidth(100);  // Cédula
         tabla.getColumnModel().getColumn(1).setPreferredWidth(160);  // Nombres
@@ -133,6 +162,10 @@ public class PanelEstudiantes extends JPanel {
         tabla.getColumnModel().getColumn(3).setPreferredWidth(200);  // Correo
 
         JScrollPane scrollTabla = new JScrollPane(tabla);
+        //colores
+        scrollTabla.setBackground(fondoCrema);
+        scrollTabla.getViewport().setBackground(Color.WHITE);
+
         scrollTabla.setBorder(
                 BorderFactory.createTitledBorder("Lista de Estudiantes (ordenada por apellido)"));
 
