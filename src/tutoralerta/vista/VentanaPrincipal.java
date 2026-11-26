@@ -16,17 +16,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.SwingConstants;
-
 
 public class VentanaPrincipal extends JFrame {
 
     private JTabbedPane pestanas;
     private PanelEstudiantes panelEstudiantes;
     private PanelAsistencia panelAsistencia;
+    private PanelNotas panelNotas;
 
     public VentanaPrincipal() {
-        
+
         Color fondoBannerPastel = new Color(218, 232, 248);
         Color bordeSuave = new Color(188, 202, 232);
         Color textoPrincipal = new Color(45, 52, 64);
@@ -38,7 +37,7 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Encabezado institucional en tonos pasteles con logo a la izquierda
+        // Encabezado
         JPanel encabezado = new JPanel(new BorderLayout(12, 0));
         encabezado.setBackground(fondoBannerPastel);
         encabezado.setPreferredSize(new Dimension(0, 64));
@@ -75,26 +74,26 @@ public class VentanaPrincipal extends JFrame {
         pestanas = new JTabbedPane();
         pestanas.setFont(new Font("SansSerif", Font.BOLD, 13));
 
-        // Módulo 1: Estudiantes (HU-B1 - Listo)
+        // Módulo 1: Estudiantes
         panelEstudiantes = new PanelEstudiantes();
         pestanas.addTab("1. Estudiantes", panelEstudiantes);
 
-        // Módulo 2: Asistencia (HU-B2 - Pendiente de integración)
+        // Módulo 2: Asistencia
         panelAsistencia = new PanelAsistencia();
         pestanas.addTab("2. Asistencia", panelAsistencia);
 
-        // Módulo 3: Notas (HU-B3 - Pendiente de integración)
-        pestanas.addTab("3. Notas", crearPanelPendiente("Módulo de Registro de Notas (HU-B3) - Pendiente de integración"));
+        // Módulo 3: Notas
+        panelNotas = new PanelNotas();
+        pestanas.addTab("3. Notas", panelNotas);
+
+        // Sincronizar estudiantes y evaluaciones al entrar a la pestaña de Notas
+        pestanas.addChangeListener(e -> {
+            if (pestanas.getSelectedComponent() == panelNotas) {
+                panelNotas.recargarDatos();
+            }
+        });
 
         add(pestanas, BorderLayout.CENTER);
-    }
-
-    private JPanel crearPanelPendiente(String mensaje) {
-        JPanel panel = new JPanel(new BorderLayout());
-        JLabel etiqueta = new JLabel(mensaje, SwingConstants.CENTER);
-        etiqueta.setFont(new Font("SansSerif", Font.PLAIN, 15));
-        panel.add(etiqueta, BorderLayout.CENTER);
-        return panel;
     }
 
     private ImageIcon cargarLogoEscalonado(String rutaArchivo, int ancho, int alto) {
