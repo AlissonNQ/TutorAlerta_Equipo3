@@ -23,6 +23,7 @@ public class VentanaPrincipal extends JFrame {
 
     private JTabbedPane pestanas;
     private PanelEstudiantes panelEstudiantes;
+    private PanelAsistencia panelAsistencia;
 
     public VentanaPrincipal() {
         
@@ -79,7 +80,8 @@ public class VentanaPrincipal extends JFrame {
         pestanas.addTab("1. Estudiantes", panelEstudiantes);
 
         // Módulo 2: Asistencia (HU-B2 - Pendiente de integración)
-        pestanas.addTab("2. Asistencia", crearPanelPendiente("Módulo de Toma de Asistencia (HU-B2) - Pendiente de integración"));
+        panelAsistencia = new PanelAsistencia();
+        pestanas.addTab("2. Asistencia", panelAsistencia);
 
         // Módulo 3: Notas (HU-B3 - Pendiente de integración)
         pestanas.addTab("3. Notas", crearPanelPendiente("Módulo de Registro de Notas (HU-B3) - Pendiente de integración"));
