@@ -1,28 +1,26 @@
 # TutorAlerta - Equipo 3 (Escenario B)
 
-Aplicación de escritorio en Java para la alerta temprana de riesgo académico, diseñada para que el tutor registre la asistencia y las notas de su curso y detecte a tiempo qué estudiantes requieren tutoría.
+Aplicación de escritorio en Java Swing con persistencia en archivos CSV para la alerta temprana de riesgo académico, diseñada para que el tutor registre estudiantes, tome asistencia y cargue calificaciones de su curso.
 
 ## Integrantes y Roles (Sprint 1)
-* **Doménica** – Product Owner & Desarrolladora (`HU-B1`: Registrar estudiantes)
-* **Andrés** – Scrum Master & Desarrollador (`HU-B2`: Tomar asistencia)
-* **David** – Desarrollador (`HU-B3`: Registrar notas)
-* **Alisson** – Arquitectura, Persistencia (CSV) & QA Lead
+- **Doménica** – Product Owner y Desarrolladora
+- **Andrés** – Scrum Master y Desarrollador
+- **David** – Desarrollador
+- **Alisson** – Desarrolladora 
 
 ## Tablero de Seguimiento (Scrum)
-* **Trello:** (https://trello.com/invite/b/6affbb680328e514d0a9099e/ATTI3e8dde98c423dac40c7a50901cbd9c32E65DD0E5/tutoralerta-equipo-3)
+- **Trello:** https://trello.com/invite/b/6affbb680328e514d0a9099e/ATTI3e8dde98c423dac40c7a50901cbd9c32E65DD0E5/tutoralerta-equipo-3
 
 ## Estructura del Proyecto
-* `src/tutoralerta/principal/` – Punto de entrada de la aplicación.
-* `src/tutoralerta/modelo/` – Entidades del dominio (`Estudiante`, `Sesion`, `Evaluacion`, `Nota`).
-* `src/tutoralerta/persistencia/` – Persistencia y lectura/escritura en archivos CSV.
-* `src/tutoralerta/servicio/` – Lógica de negocio y validaciones.
-* `src/tutoralerta/vista/` – Interfaz gráfica de usuario (Java Swing/JavaFX).
-* `dist/` – Archivo ejecutable `TutorAlerta.jar` y carpeta `datos/` con archivos CSV.
-
+- `src/tutoralerta/main/` – Punto de entrada de la aplicación (`Main.java`).
+- `src/tutoralerta/modelo/` – Entidades del dominio (`Estudiante`, `Sesion`, `Evaluacion`, `Nota`).
+- `src/tutoralerta/persistencia/` – Lectura y escritura de datos en archivos CSV.
+- `src/tutoralerta/servicio/` – Reglas de negocio y validaciones.
+- `src/tutoralerta/vista/` – Interfaz gráfica de usuario en Java Swing (`VentanaPrincipal`, paneles por historia).
+- `dist/` – Ejecutable `TutorAlerta.jar` y carpeta `datos/` con archivos CSV de prueba.
+  
 ## Cómo ejecutar la aplicación
 
-### Desde el ejecutable (.jar)
-1. Asegúrate de estar en la carpeta raíz del proyecto o dentro de `dist/`.
-2. Ejecuta en la terminal:
-   ```bash
-   java -jar dist/TutorAlerta.jar
+### Desde la raíz del proyecto (`TutorAlerta_Equipo3`)
+```bash
+java -jar dist/TutorAlerta.jar
